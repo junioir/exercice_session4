@@ -91,6 +91,8 @@ public class CalculatorWithBugs : MonoBehaviour
 
     public void Calculate()
     {
+        if (_currentOperation == 0) return;
+
         float result = 0;
         switch (_currentOperation)
         {
