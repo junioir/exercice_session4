@@ -33,7 +33,7 @@ public class CalculatorWithBugs : MonoBehaviour
 
     public void Dot()
     {
-        EnterValue(".");
+        EnterValue(",");
     }
         
     public void EnterValue(string newValue)
@@ -42,8 +42,8 @@ public class CalculatorWithBugs : MonoBehaviour
         {
             Clear();
         }
-        float test;
-        if (float.TryParse(_textValue.text, out test))
+
+        if (float.TryParse(_textValue.text, out _))
         {
             _textValue.text = string.Concat(_textValue.text, newValue);
             _currentNumber = float.Parse(_textValue.text);

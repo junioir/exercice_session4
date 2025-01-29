@@ -21,14 +21,13 @@ public class ClientListManager : MonoBehaviour
         GameObject newEntry = Instantiate(clientEntryPrefab, clientListContainer);
         newEntry.transform.SetAsFirstSibling(); // Ajoute en haut de la liste
 
-        Image clientImage = newEntry.transform.Find("Customer_Img")?.GetComponent<Image>();
-        TMP_Text clientText = newEntry.transform.Find("ClientName")?.GetComponent<TMP_Text>();
-        Button deleteButton = newEntry.transform.Find("Button")?.GetComponent<Button>();
+        Image clientImage = newEntry.GetComponentInChildren<Image>();
+        TMP_Text clientText = newEntry.GetComponentInChildren<TMP_Text>();
+        Button deleteButton = newEntry.GetComponentInChildren<Button>();
 
-        if (clientImage == null) Debug.LogError("Customer_Img non trouvé !");
-        if (clientText == null) Debug.LogError("ClientName non trouvé !");
-        if (deleteButton == null) Debug.LogError("button non trouvé !");
-
+       //  Debug.LogError("Customer_Img non trouvé !"+clientImage);
+      //   Debug.LogError("ClientName non trouvé !"+clientText);
+       //  Debug.LogError("button non trouvé !"+deleteButton);
 
 
         clientImage.color = new Color(Random.value, Random.value, Random.value); // Couleur aléatoire
